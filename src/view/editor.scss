@@ -1,0 +1,134 @@
+$green-color: #42b983;
+$blue-color: #2973b7;
+$orange-color: #e96900;
+$border-color: gray;
+
+.paper {
+    &-editor {
+        position: relative;
+        border: 1px solid $border-color;
+        font-size: 24px;
+        display: flex;
+        flex-direction: column;
+
+        .paper-selection-rect {
+            background-color: lightgray;
+        }
+
+        &.active {
+            .paper-selection-rect {
+                background-color: lightblue;
+            }
+        }
+    }
+
+    &-toolbar {
+        .c-button {
+            font-size: 20px;
+        }
+
+        .c-select {
+            width: 50px;
+            padding: 0;
+            vertical-align: bottom;
+
+            &-options {
+                max-height: none;
+                overflow: auto;
+                font-size: 14px;
+
+                .c-option {
+                    padding-left: 10px;
+                }
+            }
+
+            .c-input-label-indicator:after {
+                bottom: 0;
+            }
+        }
+    }
+
+    &-edit-area {
+        flex: 1;
+        position: relative;
+    }
+
+    &-content {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        white-space: pre;
+        padding: 20px;
+        overflow: hidden;
+
+        ul,
+        ol {
+            padding-left: 40px;
+        }
+
+        ol > li {
+            list-style-type: decimal;
+        }
+
+        ul > li {
+            list-style-type: disc;
+        }
+
+        a {
+            text-decoration: underline;
+        }
+    }
+
+    td.selected {
+        background-color: rgb(118, 167, 250);
+    }
+
+    &-table {
+        border-collapse: collapse;
+        table-layout: fixed;
+        width: 100%;
+        overflow: hidden;
+    }
+
+    &-selection {
+        position: absolute;
+        z-index: -1;
+
+        &-rect {
+            position: absolute;
+        }
+
+        &-caret-textarea {
+            overflow: hidden;
+            position: relative;
+            width: 3px;
+            height: 0px;
+
+            &--inner {
+                position: absolute;
+                bottom: -1em;
+                padding: 0px;
+                width: 1000px;
+                height: 1em;
+                outline: none;
+            }
+        }
+
+        &-carets {
+            animation: blink 1s step-end infinite;
+        }
+
+        &-caret {
+            position: absolute;
+            border-left: 2px solid $blue-color;
+            height: 20px;
+        }
+    }
+}
+
+@keyframes blink {
+    50% {
+        // visibility: hidden;
+        opacity: 0;
+    }
+}

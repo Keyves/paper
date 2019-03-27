@@ -1,0 +1,25 @@
+{
+  "defaultSeverity": "error",
+  "extends": "tslint-config-standard",
+  "rules": {
+    "semicolon": [true, "never"],
+    "interface-name": true,
+    "indent": [true, "spaces"],
+    "ter-indent": [true, 4],
+    "space-before-function-paren": false,
+    "trailing-comma": [true, {
+      "multiline": "always",
+      "singleline": "never"
+    }],
+    "no-unnecessary-type-assertion": true,
+    "no-console": true,
+    "no-debugger": true,
+    "no-null-keyword": false,
+    "quotemark": [true, "single", "jsx-double"],
+    "jsx-boolean-value": false,
+    "prefer-const": true,
+    "jsx-no-lambda": false,
+    "triple-equals": [true, "allow-null-check"],
+    "variable-name": [true, "ban-keywords", "check-format", "allow-leading-underscore"]
+  }
+}
